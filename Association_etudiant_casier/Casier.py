@@ -32,7 +32,7 @@ class Casier:
         """
                 Mutateur de l'attribut privé __num_casier
         """
-        if len(p_num_casier) == 6 and p_num_casier[0].isalpha() and p_num_casier[1:].isnumeric():
+        if len(p_num_casier) == 5 and p_num_casier[0].isalpha() and p_num_casier[1:4].isnumeric():
             self.__num_casier = p_num_casier
 
     NumCasier = property(_get_num_casier, _set_num_casier)
@@ -55,8 +55,9 @@ class Casier:
                 Méthode spéciale d'affichage. À utiliser avec print(objet)
                 :return: Chaine à afficher
         """
-        chaine = "\nNuméro du casier :" + str(self.__num_casier)
-        chaine += "\nTaille du casier :" + str(self.Taille_casier)
-        chaine += "\nLocalisation du casier :" + str(self.Localisation_casier)
+        chaine = "\nNuméro du casier : " + self.__num_casier
+        chaine += "\nTaille du casier : " + self.Taille_casier
+        chaine += "\nLocalisation du casier : " + self.Localisation_casier
+        chaine += "\nPrix du casier : " + str(self.__prix_casier)
 
         return chaine

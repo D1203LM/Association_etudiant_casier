@@ -57,8 +57,8 @@ def verifier_etudiant_liste(p_num):
 def verifier_casier_liste(p_num_casier):
     for elt in ls_Etudiants:
         if p_num_casier == elt.Casier.NumCasier:
-            return False
-    return True
+            return True
+    return False
 
 
 def cacher_labels_erreur(objet):
@@ -120,14 +120,14 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         etud.NumEtud = self.lineEdit_numero.text()
         etud.DateNaiss= self.dateEdit_DNaiss.date()
         etud.Programme = self.comboBox_programme.currentText()
+        # Booleen qui nous informe si le numéro d'étudiant existe ou pas dans la liste des étudiants
+        verifier_etudiant = verifier_etudiant_liste(etud.NumEtud)
         # Instancier un objet Casier
         cas = Casier()
         # Entrée de donnée pour les attributs de l'objet Casier
         cas.NumCasier = self.lineEdit_numero_casier.text()
         cas.TailleCasier = self.comboBox_taille_casier.currentText()
         cas.LocalisationCasier = self.comboBox_localisation_casier.currentText()
-        # Booleen qui nous informe si le numéro d'étudiant existe ou pas dans la liste des étudiants
-        verifier_etudiant = verifier_etudiant_liste(etud.NumEtud)
         # Booleen qui nous informe si le numéro du casier existe ou pas dans la liste des étudiants
         verifier_casier = verifier_casier_liste(cas.NumCasier)
 
@@ -153,7 +153,8 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         if etud.DateNaiss == "":
              self.label_erreur_date.setVisible(True)
         # Si les informations entrées sont valides et l'étudiant n'existe pas dans la liste des étudiants
-        if etud.NomEtud != "" and etud.NumEtud != "" and etud.DateNaiss != "" and verifier_etudiant is False:
+        if etud.NomEtud != "" and etud.NumEtud != "" and etud.DateNaiss != "" and verifier_etudiant\
+                and cas.NumCasier != "" and verifier_casier is False:
             #Ajouter l'objet instancié à la liste des étudiants
             etud.Casier = cas
             ls_Etudiants.append(etud)
