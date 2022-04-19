@@ -153,8 +153,7 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         if etud.DateNaiss == "":
              self.label_erreur_date.setVisible(True)
         # Si les informations entrées sont valides et l'étudiant n'existe pas dans la liste des étudiants
-        if etud.NomEtud != "" and etud.NumEtud != "" and etud.DateNaiss != "" and verifier_etudiant\
-                and cas.NumCasier != "" and verifier_casier is False:
+        if etud.NomEtud != "" and etud.NumEtud != "" and etud.DateNaiss != "" and verifier_etudiant is False:
             #Ajouter l'objet instancié à la liste des étudiants
             etud.Casier = cas
             ls_Etudiants.append(etud)
