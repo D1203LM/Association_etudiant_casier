@@ -22,4 +22,3 @@ class Fenetrelistview(QtWidgets.QDialog, formulaire_dialogue_listview.Ui_Dialog)
     @pyqtSlot()
     def on_pushButton_quitter_clicked(self):
         self.close()
-

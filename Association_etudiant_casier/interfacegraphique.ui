@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1096</width>
-    <height>1035</height>
+    <width>1112</width>
+    <height>1129</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -74,7 +74,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>820</y>
+      <y>900</y>
       <width>841</width>
       <height>171</height>
      </rect>
@@ -406,7 +406,7 @@
     <property name="geometry">
      <rect>
       <x>460</x>
-      <y>780</y>
+      <y>860</y>
       <width>271</width>
       <height>31</height>
      </rect>
@@ -615,13 +615,31 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Numéro de casier invalide. Entrez une lettre suivie de 4 valeurs numériques.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_cours">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>800</y>
+      <width>151</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cours</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1096</width>
+     <width>1112</width>
      <height>21</height>
     </rect>
    </property>
