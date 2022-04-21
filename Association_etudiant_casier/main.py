@@ -126,8 +126,8 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         cas = Casier()
         # Entrée de donnée pour les attributs de l'objet Casier
         cas.NumCasier = self.lineEdit_numero_casier.text()
-        cas.TailleCasier = self.comboBox_taille_casier.currentText()
-        cas.LocalisationCasier = self.comboBox_localisation_casier.currentText()
+        cas.Taille_casier = self.comboBox_taille_casier.currentText()
+        cas.Localisation_casier = self.comboBox_localisation_casier.currentText()
         # Booleen qui nous informe si le numéro du casier existe ou pas dans la liste des étudiants
         verifier_casier = verifier_casier_liste(cas.NumCasier)
 
@@ -162,6 +162,7 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
             # Réinitialiser les lineEdits du nom, du numéro d'étudiant et du dateEdit
             self.lineEdit_numero.clear()
             self.lineEdit_nom.clear()
+            self.lineEdit_numero_casier.clear()
             self.dateEdit_DNaiss.setDate(QDate(2000, 1, 1))
 
 

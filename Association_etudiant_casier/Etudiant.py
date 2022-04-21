@@ -11,6 +11,8 @@ import json
 
 from Casier import *
 
+from Cours import *
+
 class Etudiant:
     """
      Classe Etudiant
@@ -20,7 +22,7 @@ class Etudiant:
     ###################################
     #####  MÉTHODE CONSTRUCTEUR  #####
     ###################################
-    def __init__(self,p_num="",p_nom="",p_prog="",p_date_naiss="", p_casier=Casier()):
+    def __init__(self,p_num="",p_nom="",p_prog="",p_date_naiss="", p_casier=Casier(), p_list_cours=Cours()):
         """
                 Méthode de type Constructeur avec paramètres et valeurs par défaut
                 Définition des attributs publics d'un étudiant
@@ -30,6 +32,7 @@ class Etudiant:
         self.Programme = p_prog
         self.__date_naiss = p_date_naiss
         self.Casier = p_casier
+        self.List_cours = p_list_cours
 
     ##################################################
     ####   Propriétés, accesseurs et mutateurs    ####
