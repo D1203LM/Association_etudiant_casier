@@ -6,18 +6,21 @@ from PyQt5.QtCore import pyqtSlot
 # Importer la boite de dialogue
 
 
-import formulaire_dialogue_listcours
+import formulaire_dialogue_ajouter_cours
 
+
+# Déclarer une liste de cours
+ls_Cours = []
 
 #####################################################
 ##### DÉFINITIONS DE LA CLASSE Fenetrelistcours #####
 #####################################################
 
-class Fenetrelistcours(QtWidgets.QDialog, formulaire_dialogue_listcours.Ui_Dialog):
+class Fenetreajoutercours(QtWidgets.QDialog, formulaire_dialogue_ajouter_cours.Ui_Dialog):
     def __init__(self, parent=None):
-        super(Fenetrelistcours, self).__init__(parent)
+        super(Fenetreajoutercours, self).__init__(parent)
         self.setupUi(self)
-        self.setWindowTitle("Liste des cours")
+        self.setWindowTitle("Ajouter cours")
 
     @pyqtSlot()
     def on_pushButton_quitter_clicked(self):

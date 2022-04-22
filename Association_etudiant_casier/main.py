@@ -23,6 +23,7 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 # importer les interfaces graphiques
 import interfacegraphique
 from listview_dialog import *
+from ajouter_cours_dialog import *
 
 # Importer la classe Etudiant
 from Etudiant import *
@@ -348,6 +349,21 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
             item = QStandardItem(e.NumEtud+" * "+e.NomEtud + " * " + e.Programme )
             model.appendRow(item)
         #Afficher la boite de dialogue
+        dialog.show()
+        reply = dialog.exec_()
+
+    # Bouton listcours
+    @pyqtSlot()
+    def on_pushButton_cours_clicked(self):
+        # Instancier une boite de dialogue FenetreListcours
+        dialog = Fenetreajoutercours()
+        # Préparer la listcours
+        model = QStandardItemModel()
+        dialog.listView_cours.setModel(model)
+        for c in ls_Cours:
+            item = QStandardItem(c.SigleCours + " * " + c.TitreCours + " * " + c.NombreHeuresCours)
+            model.appendRow(item)
+        # Afficher la boite de dialogue
         dialog.show()
         reply = dialog.exec_()
 
