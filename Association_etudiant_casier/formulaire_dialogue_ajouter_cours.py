@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'dialogue_listcours.ui'
+# Form implementation generated from reading ui file 'dialogue_ajoutercours.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(586, 671)
+        Dialog.resize(561, 556)
         self.label_numero_etudiant = QtWidgets.QLabel(Dialog)
         self.label_numero_etudiant.setGeometry(QtCore.QRect(100, 40, 121, 21))
         font = QtGui.QFont()

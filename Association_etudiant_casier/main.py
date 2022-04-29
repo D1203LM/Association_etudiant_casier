@@ -352,10 +352,10 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         dialog.show()
         reply = dialog.exec_()
 
-    # Bouton listcours
+    # Bouton Cours
     @pyqtSlot()
     def on_pushButton_cours_clicked(self):
-        # Instancier une boite de dialogue FenetreListcours
+        # Instancier une boite de dialogue Fenetreajoutercours
         dialog = Fenetreajoutercours()
         # Préparer la listcours
         model = QStandardItemModel()
@@ -366,6 +366,21 @@ class fenetrePrincipale(QtWidgets.QMainWindow, interfacegraphique.Ui_MainWindow)
         # Afficher la boite de dialogue
         dialog.show()
         reply = dialog.exec_()
+
+        # Bouton Ajouter local
+        @pyqtSlot()
+        def on_pushButton_ajouter_local_clicked(self):
+            # Instancier une boite de dialogue Fenetreajoutercours
+            dialog = Fenetreajoutercours()
+            # Préparer la listcours
+            model = QStandardItemModel()
+            dialog.listView_cours.setModel(model)
+            for c in ls_Cours:
+                item = QStandardItem(c.SigleCours + " * " + c.TitreCours + " * " + c.NombreHeuresCours)
+                model.appendRow(item)
+            # Afficher la boite de dialogue
+            dialog.show()
+            reply = dialog.exec_()
 
 #################################
 ###### PROGRAMME PRINCIPAL ######

@@ -12,15 +12,15 @@ import formulaire_dialogue_ajouter_cours
 # Déclarer une liste de cours
 ls_Cours = []
 
-#####################################################
-##### DÉFINITIONS DE LA CLASSE Fenetrelistcours #####
-#####################################################
+#######################################################
+##### DÉFINITIONS DE LA CLASSE Fenetreajoutercours ####
+#######################################################
 
 class Fenetreajoutercours(QtWidgets.QDialog, formulaire_dialogue_ajouter_cours.Ui_Dialog):
     def __init__(self, parent=None):
         super(Fenetreajoutercours, self).__init__(parent)
         self.setupUi(self)
-        self.setWindowTitle("Ajouter cours")
+        self.setWindowTitle("Cours")
 
     @pyqtSlot()
     def on_pushButton_quitter_clicked(self):
